@@ -8,9 +8,9 @@
 #include <math.h>
 using namespace std;
 
-void leer(vector <vector<pair<double,double>>> &grafo){
+void leer(vector <vector<pair<double,double> > > &grafo){
     char cadena[128];
-    vector <pair<double,double>> nodos;
+    vector <pair<double,double> > nodos;
     int n;
     ifstream fe("tc2c320s24cf0.txt");
     fe.getline(cadena, 128);
@@ -25,7 +25,7 @@ void leer(vector <vector<pair<double,double>>> &grafo){
     fe.close();
 }
 
-void llenargrafo(vector <vector<pair<double,double>>> &grafo, vector<pair<double,double>> nodos){
+void llenargrafo(vector <vector<pair<double,double> > > &grafo, vector<pair<double,double> > nodos){
     for(int i = 0; i < grafo.size(); ++i){
         pair <double,double> nodo1 = nodos.at(i);
         int x1 = nodo1.first;
@@ -45,9 +45,9 @@ void llenargrafo(vector <vector<pair<double,double>>> &grafo, vector<pair<double
     }
 }
 
-vector<pair<double,double>> leeraux(ifstream &fe){
+vector<pair<double,double> > leeraux(ifstream &fe){
     string lectura;
-    vector<pair<double,double>> nodos;
+    vector<pair<double,double> > nodos;
     double objetivo,peso;
     fe >> lectura;
     while(!fe.eof()){
@@ -66,7 +66,7 @@ vector<pair<double,double>> leeraux(ifstream &fe){
     return nodos;
 }
 
-void addEdge(vector <vector<pair<double,double>>> &grafo, int u, double v) { 
+void addEdge(vector <vector<pair<double,double> > > &grafo, int u, double v) { 
     pair <int,int> newedge;
     newedge.first = v;
     newedge.second = 5;
@@ -74,8 +74,8 @@ void addEdge(vector <vector<pair<double,double>>> &grafo, int u, double v) {
 }
 
 
-vector <vector<pair<double,double>>> llenar(vector <vector<pair<double,double>>> adj, int V){
-    vector<pair<double,double>> nuevo;
+vector <vector<pair<double,double> > > llenar(vector <vector<pair<double,double> > > adj, int V){
+    vector<pair<double,double> > nuevo;
     for(short i= 0; i < V ; ++i){
         adj.push_back(nuevo);
     }
